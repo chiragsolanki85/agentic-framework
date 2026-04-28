@@ -1,0 +1,46 @@
+---
+title: Agent Overview
+summary: What each agent is responsible for and where it fits in the lifecycle.
+sourceRefs:
+  - agents/requirements-agent.md
+  - agents/spec-agent.md
+  - agents/implementation-agent.md
+  - agents/review-agent.md
+  - agents/validation-agent.md
+  - agents/deployment-agent.md
+  - agents/feedback-agent.md
+  - agents/context-lifecycle-agent.md
+---
+
+## Agent roster
+
+The framework uses specialized agents with bounded responsibilities:
+
+- Requirements Agent
+- Spec Agent
+- Implementation Agent
+- Review Agent
+- Validation Agent
+- Deployment Agent
+- Feedback Agent
+- Context Lifecycle Agent
+
+## Why specialized agents
+
+- Prevents role drift and uncontrolled autonomy
+- Improves quality through clear IO contracts
+- Makes escalation and approval ownership explicit
+
+## Agent responsibilities (at a glance)
+
+| Agent | Primary input | Primary output | Human gate |
+|---|---|---|---|
+| Requirements | Foundations and constraints | Feature BDD requirement | Refined-ready approval |
+| Spec | Approved requirement | Technical spec | Spec approval |
+| Implementation | Approved spec | Code and implementation log | PR/merge approval |
+| Review | Requirement/spec/implementation | Risk and quality findings | Engineering approval decision |
+| Validation | Requirement/spec/implementation | Validation report | Suite approval |
+| Deployment | Validation and readiness | Deployment report | Go/no-go + verification |
+| Feedback | Telemetry and outcomes | Outcome review | Product triage decision |
+| Context Lifecycle | All stage outputs | Diff/consistency closure evidence | Context complete verification |
+

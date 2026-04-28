@@ -30,5 +30,13 @@ export const navGroups: NavGroup[] = [
       { title: "Feedback", slug: "lifecycle-feedback" },
       { title: "Context Lifecycle", slug: "lifecycle-context" }
     ]
+  },
+  {
+    title: "Agents",
+    items: [
+      { title: "Agent Overview", slug: "agents-overview" },
+      { title: "Agent Handoffs", slug: "agents-handoffs" },
+      { title: "Agent Prompt Playbook", slug: "agents-prompt-playbook" }
+    ]
   }
 ];

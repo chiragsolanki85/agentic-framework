@@ -1,0 +1,49 @@
+---
+title: Agent Prompt Playbook
+summary: Which prompt to run for each agent and when to use governance prompts.
+sourceRefs:
+  - prompts/00-session-bootstrap.md
+  - prompts/01-foundations-facilitator.md
+  - prompts/02-requirements-agent.md
+  - prompts/03-refined-ready-gate-review.md
+  - prompts/04-spec-agent.md
+  - prompts/05-spec-approval-gate.md
+  - prompts/06-implementation-agent.md
+  - prompts/07-review-agent.md
+  - prompts/09-handoff-log-entry.md
+  - prompts/10-orchestrator-whats-next.md
+  - prompts/11-validation-agent.md
+  - prompts/12-deployment-agent.md
+  - prompts/13-feedback-agent.md
+  - prompts/14-context-lifecycle-agent.md
+---
+
+## Standard execution sequence
+
+Use this order for one feature (`FEAT-<EPIC>-<NNN>`):
+
+1. `prompts/00-session-bootstrap.md`
+2. `prompts/02-requirements-agent.md`
+3. `prompts/03-refined-ready-gate-review.md`
+4. `prompts/04-spec-agent.md`
+5. `prompts/05-spec-approval-gate.md`
+6. `prompts/06-implementation-agent.md`
+7. `prompts/07-review-agent.md`
+8. `prompts/11-validation-agent.md`
+9. `prompts/12-deployment-agent.md`
+10. `prompts/13-feedback-agent.md`
+11. `prompts/14-context-lifecycle-agent.md`
+
+Always run:
+
+- `prompts/09-handoff-log-entry.md` after each gate
+- `prompts/10-orchestrator-whats-next.md` if blocked or uncertain
+
+## Governance prompts (when to use)
+
+- `prompts/governance/G1-governance-compliance-audit.md` for baseline governance checks
+- `prompts/governance/G2-traceability-audit.md` for requirement-to-release traceability
+- `prompts/governance/G3-human-gate-readiness.md` before major approvals
+- `prompts/governance/G4-risk-escalation-check.md` when risk signals increase
+- `prompts/governance/G5-v2-gate-audit.md` for end-to-end lifecycle closure
+

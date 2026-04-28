@@ -1,0 +1,38 @@
+---
+title: Agent Handoffs
+summary: Stage-to-stage agent transitions, required evidence, and approval gates.
+sourceRefs:
+  - prompts/09-handoff-log-entry.md
+  - logs/handoffs/30_handoffs.md
+  - standards/accountability-matrix.md
+  - standards/v2-lifecycle-governance.md
+---
+
+## Handoff flow
+
+1. Requirements Agent -> Refined-ready gate
+2. Spec Agent -> Spec approval gate
+3. Implementation Agent -> PR approval gate
+4. Validation Agent -> Suite approval gate
+5. Deployment Agent -> Go/no-go and verification gate
+6. Feedback Agent -> Outcome triage gate
+7. Context Lifecycle Agent -> Context-complete closure gate
+
+## Handoff rules
+
+- Every transition must be recorded in `logs/handoffs/30_handoffs.md`.
+- Every gate must name a human decision owner.
+- No stage can proceed without evidence from prior gate.
+
+## Required evidence per transition
+
+| Transition | Required evidence |
+|---|---|
+| Requirements -> Spec | Refined-ready checklist and approved requirement |
+| Spec -> Implementation | Approved `SPEC-FEAT-*` with task plan |
+| Implementation -> Validation | Implementation log plus PR review outcomes |
+| Validation -> Deployment | Validation report with pass recommendation |
+| Deployment -> Feedback | Deployment report and verification |
+| Feedback -> Context | Outcome review decision |
+| Context -> Done | Context diff + consistency check + final approval |
+
