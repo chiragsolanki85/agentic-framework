@@ -78,6 +78,11 @@ a:hover { text-decoration: underline; }
   border-radius: 8px;
 }
 .sidebar li a:hover { background: #f3f4f6; text-decoration: none; }
+.sidebar li a.is-active {
+  background: #e5f3f1;
+  color: #0f766e;
+  border: 1px solid #bfe3de;
+}
 .main {
   background: #fff;
   border: 1px solid #e5e7eb;

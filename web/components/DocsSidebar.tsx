@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navGroups } from "@/lib/site-nav";
 
 export function DocsSidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="sidebar card">
       {navGroups.map((group) => (
@@ -10,7 +15,12 @@ export function DocsSidebar() {
           <ul>
             {group.items.map((item) => (
               <li key={item.slug}>
-                <Link href={`/docs/${item.slug}`}>{item.title}</Link>
+                <Link
+                  href={`/docs/${item.slug}`}
+                  className={pathname === `/docs/${item.slug}` ? "is-active" : undefined}
+                >
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>

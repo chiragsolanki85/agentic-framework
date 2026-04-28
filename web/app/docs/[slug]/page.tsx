@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getAllDocSlugs, getDoc } from "@/lib/docs";
 import { getMDXComponents } from "@/components/mdx-components";
 import { DocsSidebar } from "@/components/DocsSidebar";
@@ -26,7 +27,12 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
 
   const { content } = await compileMDX({
     source: doc.content,
-    options: { parseFrontmatter: false },
+    options: {
+      parseFrontmatter: false,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
+    },
     components: getMDXComponents({
       FoundationsWorkflow,
       RequirementsWorkflow,
