@@ -10,7 +10,7 @@ export default function HomePage() {
           role responsibilities, and tiered artefact adoption.
         </p>
         <p>
-          Start with <Link href="/docs/first-product">First Product Guide</Link> or browse the <Link href="/catalog">Artefact Catalog</Link>.
+          Start with <Link href="/docs/first-product">First Product Guide</Link> or browse the <Link href="/catalog">Artefact Catalogue</Link>.
         </p>
         <p>
           Canonical repository:{" "}

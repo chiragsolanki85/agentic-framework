@@ -1,0 +1,143 @@
+---
+title: Executive Implementation Guide
+summary: End-to-end reading guide for leaders and new teams launching their first product with the Crosstide Agentic SDLC.
+sourceRefs:
+  - README.md
+  - ARTEFACT_TIER_MATRIX.md
+  - 00_foundations/cross-cutting/foundations-checklist.md
+  - prompts/00-session-bootstrap.md
+  - prompts/01-foundations-facilitator.md
+  - prompts/02-requirements-agent.md
+  - prompts/03-refined-ready-gate-review.md
+  - prompts/04-spec-agent.md
+  - prompts/05-spec-approval-gate.md
+  - prompts/06-implementation-agent.md
+  - prompts/07-review-agent.md
+  - prompts/11-validation-agent.md
+---
+
+## Why this exists
+
+This guide is for leadership and novice teams who need one clear view of what will happen when delivery starts:
+
+- what the team must prepare
+- how agents are used in sequence
+- what each prompt returns
+- what humans must decide at each gate
+- how you get from blank slate to working code safely
+
+The key principle is simple: **speed comes from structure**. Agents execute quickly, but only within explicit guardrails.
+
+## The minimum viable path to first product
+
+For a first product, use the **Core tier** only. Do not start with Extended/Optional unless risk or compliance requires it.
+
+1. Complete all foundation artefacts.
+2. Validate foundation readiness.
+3. Run one feature through the lifecycle:
+   - Requirements
+   - Specification
+   - Implementation
+   - Validation
+   - Deployment
+   - Feedback
+   - Context closure
+
+## Foundations: what leadership should expect
+
+Before coding starts, teams define product, architecture, engineering, data, and ways-of-working context.
+
+**Output:** a complete, reviewed foundation package and handoff artefact.
+
+**Leadership check:** if this is weak, delivery speed increases rework and risk.
+
+### Prompt and expectation mapping
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/00-session-bootstrap.md` | Sets operating constraints for the agent session | Grounded execution mode with mandatory standards | Confirm constraints and source-of-truth references |
+| `prompts/01-foundations-facilitator.md` | Elicits missing context across all foundation domains | Drafted foundation artefacts + gap questions | Provide business context and approve readiness |
+
+## Feature delivery: stage-by-stage (from intent to working code)
+
+### 1) Requirements Definition
+
+- **Agent focus:** convert intent into testable BDD feature stories.
+- **Core output:** `FEATURE-<EPIC>-<NNN>.md` + refined-ready checklist.
+- **Human gate:** product/engineering approval that requirement is build-ready.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/02-requirements-agent.md` | Drafts/refines requirement from foundations | BDD scenarios, scope, risks, dependencies | Review ambiguity and confirm scope |
+| `prompts/03-refined-ready-gate-review.md` | Quality gate before spec work starts | Approve/changes-required decision | Decide if requirement can enter technical design |
+
+### 2) Technical Specification
+
+- **Agent focus:** convert approved requirements into implementation-safe spec.
+- **Core output:** `SPEC-FEAT-<...>.md` with path plan, risks, and acceptance tests.
+- **Human gate:** engineering approval of design trade-offs and risk.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/04-spec-agent.md` | Generates technical blueprint and task plan | Draft spec and assumptions | Validate architecture, security, and complexity |
+| `prompts/05-spec-approval-gate.md` | Runs formal spec approval check | Approve/changes-required with rationale | Make explicit go/no-go decision |
+
+### 3) Implementation
+
+- **Agent focus:** execute approved spec in atomic changes.
+- **Core output:** code changes + implementation log + PR evidence.
+- **Human gate:** merge approval based on quality and risk.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/06-implementation-agent.md` | Executes implementation tasks from approved spec | Implementation log + validation status | Ensure scope is respected and checks are green |
+| `prompts/07-review-agent.md` | Reviews correctness, security, and regressions | Severity-ranked findings and recommendation | Approve merge or request changes |
+
+### 4) Validation and Testing
+
+- **Agent focus:** verify intent, contracts, edge cases, regression.
+- **Core output:** validation plan/report and suite recommendation.
+- **Human gate:** approve validation evidence before deploy.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/11-validation-agent.md` | Runs validation workflow and evidence creation | Coverage summary + pass/fail recommendation | Confirm release confidence threshold is met |
+
+### 5) Deployment
+
+- **Agent focus:** governed rollout, telemetry checks, rollback readiness.
+- **Core output:** deployment readiness and deploy report.
+- **Human gate:** release go/no-go and post-deploy verification.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/12-deployment-agent.md` | Prepares and executes deployment flow | Readiness state + deployment verification summary | Approve release and confirm production health |
+
+### 6) Feedback and Context Closure
+
+- **Agent focus:** compare outcomes to targets and keep context truthful.
+- **Core output:** outcome review, context diff, consistency checks.
+- **Human gate:** triage decision + context-complete closure.
+
+| Prompt | What it does | What it returns | Human expectation |
+|---|---|---|---|
+| `prompts/13-feedback-agent.md` | Synthesizes post-release signals | Outcome delta and recommendation | Decide close/reopen/follow-on work |
+| `prompts/14-context-lifecycle-agent.md` | Aligns docs/context with deployed reality | Context consistency status | Approve lifecycle closure |
+
+## Two prompts used throughout
+
+| Prompt | Why it matters |
+|---|---|
+| `prompts/09-handoff-log-entry.md` | Creates auditable transition records between every stage |
+| `prompts/10-orchestrator-whats-next.md` | Removes uncertainty and tells the team the next valid move |
+
+## What a CEO should monitor weekly
+
+- Are foundation artefacts complete before implementation starts?
+- Are stage approvals explicitly recorded?
+- Are deployments blocked when validation evidence is weak?
+- Are outcomes measured against targets after release?
+- Are teams closing context, not just code?
+
+If these are consistently true, the organisation is getting both speed and control from the framework.
+

@@ -50,5 +50,11 @@ export const navGroups: NavGroup[] = [
       { title: "Agent Handoffs", slug: "agents-handoffs" },
       { title: "Agent Prompt Playbook", slug: "agents-prompt-playbook" }
     ]
+  },
+  {
+    title: "Executive Readout",
+    items: [
+      { title: "Executive Implementation Guide", slug: "executive-implementation-guide" }
+    ]
   }
 ];

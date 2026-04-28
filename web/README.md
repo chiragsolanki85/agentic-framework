@@ -7,7 +7,7 @@ This folder contains a Next.js + MDX documentation portal designed for Vercel ho
 - Interactive docs/wiki pages for lifecycle guidance
 - Role-based guidance for Product, Engineering, and Delivery/Governance
 - Tiering model guidance (Core/Extended/Optional)
-- Artefact catalog with filters (tier, stage, role, keyword)
+- Artefact catalogue with filters (tier, stage, role, keyword)
 - Crosstide branding via `public/dark-logo.svg`
 
 ## Local development
@@ -39,7 +39,7 @@ From the `web/` folder:
 - Docs content pages live in `web/content/*.mdx`.
 - Shared docs navigation is defined in `web/lib/site-nav.ts`.
 - Source references are declared in each page frontmatter (`sourceRefs`) and rendered in page content.
-- Artefact catalog data is defined in `web/lib/artefacts.ts`.
+- Artefact catalogue data is defined in `web/lib/artefacts.ts`.
 
 ## Content update workflow
 

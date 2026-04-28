@@ -25,7 +25,7 @@ export default function CatalogPage() {
 
   return (
     <section className="card">
-      <h1>Artefact Catalog</h1>
+      <h1>Artefact Catalogue</h1>
       <p className="kicker">Filter by tier, stage, role, and keyword to identify what to produce and when.</p>
       <div className="filters">
         <input type="search" placeholder="Search artefacts" value={query} onChange={(e)=>setQuery(e.target.value)} />
