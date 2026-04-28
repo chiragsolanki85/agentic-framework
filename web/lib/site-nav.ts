@@ -32,6 +32,18 @@ export const navGroups: NavGroup[] = [
     ]
   },
   {
+    title: "Standards",
+    items: [
+      { title: "Standards Overview", slug: "standards-overview" },
+      { title: "Coding Standards", slug: "standards-coding" },
+      { title: "Security and NFR", slug: "standards-security-nfr" },
+      { title: "Artefact Governance", slug: "standards-artefact-governance" },
+      { title: "Traceability Policy", slug: "standards-traceability" },
+      { title: "Accountability Matrix", slug: "standards-accountability" },
+      { title: "V2 Lifecycle Governance", slug: "standards-v2-lifecycle" }
+    ]
+  },
+  {
     title: "Agents",
     items: [
       { title: "Agent Overview", slug: "agents-overview" },

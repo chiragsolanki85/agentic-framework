@@ -4,6 +4,16 @@ import { getAllDocSlugs, getDoc } from "@/lib/docs";
 import { getMDXComponents } from "@/components/mdx-components";
 import { DocsSidebar } from "@/components/DocsSidebar";
 import { DocsToc } from "@/components/DocsToc";
+import {
+  ContextWorkflow,
+  DeploymentWorkflow,
+  FeedbackWorkflow,
+  FoundationsWorkflow,
+  ImplementationWorkflow,
+  RequirementsWorkflow,
+  SpecificationWorkflow,
+  ValidationWorkflow,
+} from "@/components/WorkflowBlocks";
 
 export function generateStaticParams() {
   return getAllDocSlugs().map((slug) => ({ slug }));
@@ -17,7 +27,16 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   const { content } = await compileMDX({
     source: doc.content,
     options: { parseFrontmatter: false },
-    components: getMDXComponents({}),
+    components: getMDXComponents({
+      FoundationsWorkflow,
+      RequirementsWorkflow,
+      SpecificationWorkflow,
+      ImplementationWorkflow,
+      ValidationWorkflow,
+      DeploymentWorkflow,
+      FeedbackWorkflow,
+      ContextWorkflow,
+    }),
   });
 
   return (

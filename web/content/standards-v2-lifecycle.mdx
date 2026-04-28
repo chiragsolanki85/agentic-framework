@@ -1,0 +1,27 @@
+---
+title: V2 Lifecycle Governance
+summary: Gate policies for validation, deployment, feedback, and context closure.
+sourceRefs:
+  - standards/v2-lifecycle-governance.md
+---
+
+## Validation gate
+
+- Deployment blocked until validation report is approved.
+- Critical path, regression, and NFR evidence required.
+
+## Deployment gate
+
+- Go/no-go requires readiness + rollback criteria.
+- Telemetry anomaly thresholds must be defined.
+
+## Feedback gate
+
+- Post-release review is mandatory.
+- Outcome delta must map back to targets.
+
+## Context lifecycle gate
+
+- Feature close requires code complete and context complete.
+- Context diff and consistency evidence are mandatory.
+
