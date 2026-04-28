@@ -12,6 +12,12 @@ export default function HomePage() {
         <p>
           Start with <Link href="/docs/first-product">First Product Guide</Link> or browse the <Link href="/catalog">Artefact Catalog</Link>.
         </p>
+        <p>
+          Canonical repository:{" "}
+          <a href="https://github.com/chiragsolanki85/agentic-framework" target="_blank" rel="noreferrer">
+            github.com/chiragsolanki85/agentic-framework
+          </a>
+        </p>
       </section>
       <section className="grid3" style={{ marginTop: "1rem" }}>
         <article className="card">

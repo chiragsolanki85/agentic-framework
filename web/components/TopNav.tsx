@@ -13,6 +13,9 @@ export function TopNav() {
           <Link href="/docs/overview">Docs</Link>
           <Link href="/catalog">Artefact Catalog</Link>
           <Link href="/docs/first-product">First Product Guide</Link>
+          <a href="https://github.com/chiragsolanki85/agentic-framework" target="_blank" rel="noreferrer">
+            GitHub Source
+          </a>
         </nav>
       </div>
     </header>
