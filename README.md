@@ -48,6 +48,21 @@ For `FEAT-<EPIC>-<NNN>`, run prompts in this order:
 12. `prompts/09-handoff-log-entry.md` after each gate
 13. `prompts/10-orchestrator-whats-next.md` when unsure
 
+#### When to run `prompts/09-handoff-log-entry.md` (handoff log)
+
+Nothing writes to `logs/handoffs/30_handoffs.md` automatically. Use **prompt 09** when a **human gate outcome** is decided and you are **moving the feature (or initiative) across a stage boundary** — not after every exploratory edit or draft prompt.
+
+**Do not** run prompt 09 between prompt 02 and 03 just to “checkpoint” drafting. Run prompt 02 until the requirement is ready, run prompt 03 for the refined-ready decision, then run **prompt 09** once that decision is recorded (approve or changes required with clear next step).
+
+**Typical points to run prompt 09** (after the human decision is explicit):
+
+- After refined feature ready (following prompt 03) — before starting prompt 04
+- After spec approval (following prompt 05) — before starting prompt 06
+- After merge / PR outcome (following prompt 07) — before validation or further work as agreed
+- After validation suite approval, deploy verification, outcome triage, and context-complete closure when those gates complete
+
+**Prompt 10** reads repo state (including handoffs) to suggest the next valid move; it does not replace logging. Use prompt 09 to keep the handoff log the audit trail.
+
 ### Step 3: apply enterprise gates
 
 Minimum required approvals:
