@@ -10,34 +10,46 @@ sourceRefs:
   - framework/prompts/05-spec-approval-gate.md
   - framework/prompts/06-implementation-agent.md
   - framework/prompts/07-review-agent.md
+  - framework/prompts/08-context-manager-agent.md
   - framework/prompts/09-handoff-log-entry.md
   - framework/prompts/10-orchestrator-whats-next.md
   - framework/prompts/11-validation-agent.md
   - framework/prompts/12-deployment-agent.md
   - framework/prompts/13-feedback-agent.md
   - framework/prompts/14-context-lifecycle-agent.md
+  - framework/core/starter/HAPPY_PATH_PROMPT_SEQUENCE.md
 ---
 
 ## Standard execution sequence
 
-Use this order for one feature (`FEAT-<EPIC>-<NNN>`):
+Use this order for one feature (`FEAT-<EPIC>-<NNN>`). See also the [SDLC Flow](/flow) for an interactive view.
 
-1. `framework/prompts/00-session-bootstrap.md`
-2. `framework/prompts/02-requirements-agent.md`
-3. `framework/prompts/03-refined-ready-gate-review.md`
-4. `framework/prompts/04-spec-agent.md`
-5. `framework/prompts/05-spec-approval-gate.md`
-6. `framework/prompts/06-implementation-agent.md`
-7. `framework/prompts/07-review-agent.md`
-8. `framework/prompts/11-validation-agent.md`
-9. `framework/prompts/12-deployment-agent.md`
-10. `framework/prompts/13-feedback-agent.md`
-11. `framework/prompts/14-context-lifecycle-agent.md`
+1. `framework/prompts/00-session-bootstrap.md` — start every session
+2. `framework/prompts/01-foundations-facilitator.md` — new project only
+3. `framework/prompts/02-requirements-agent.md`
+4. `framework/prompts/03-refined-ready-gate-review.md`
+5. `framework/prompts/04-spec-agent.md`
+6. `framework/prompts/05-spec-approval-gate.md`
+7. `framework/prompts/06-implementation-agent.md`
+8. `framework/prompts/07-review-agent.md`
+9. `framework/prompts/11-validation-agent.md`
+10. `framework/prompts/12-deployment-agent.md`
+11. `framework/prompts/13-feedback-agent.md`
+12. `framework/prompts/14-context-lifecycle-agent.md`
 
-Always run:
+## Meta prompts (run as needed)
 
-- `framework/prompts/09-handoff-log-entry.md` after each gate
-- `framework/prompts/10-orchestrator-whats-next.md` if blocked or uncertain
+| Prompt | When to use |
+|--------|-------------|
+| `framework/prompts/09-handoff-log-entry.md` | After each human gate decision |
+| `framework/prompts/10-orchestrator-whats-next.md` | When blocked or uncertain of next step |
+| `framework/prompts/08-context-manager-agent.md` | On-demand context updates mid-flight |
+
+## Utility prompts
+
+- `framework/prompts/utility/U1-missing-context-question-generator.md` — generate questions when context is incomplete
+- `framework/prompts/utility/U2-feature-kickoff-from-template.md` — scaffold a new feature from templates
+- `framework/prompts/utility/U3-retro-improvement-prompt.md` — retrospective and process improvement
 
 ## Governance prompts (when to use)
 
@@ -46,4 +58,3 @@ Always run:
 - `framework/prompts/governance/G3-human-gate-readiness.md` before major approvals
 - `framework/prompts/governance/G4-risk-escalation-check.md` when risk signals increase
 - `framework/prompts/governance/G5-v2-gate-audit.md` for end-to-end lifecycle closure
-

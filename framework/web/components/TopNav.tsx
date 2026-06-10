@@ -34,6 +34,9 @@ export function TopNav() {
           <Link className={isActive("/docs/overview") ? "is-active" : undefined} href="/docs/overview" onClick={() => setMenuOpen(false)}>
             Docs
           </Link>
+          <Link className={isActive("/flow") ? "is-active" : undefined} href="/flow" onClick={() => setMenuOpen(false)}>
+            SDLC Flow
+          </Link>
           <Link className={isActive("/catalog") ? "is-active" : undefined} href="/catalog" onClick={() => setMenuOpen(false)}>
             Artefact Catalogue
           </Link>
@@ -47,9 +50,9 @@ export function TopNav() {
       </div>
       <div className="mobile-quick-actions">
         <div className="container mobile-quick-actions-inner">
+          <Link className={isActive("/flow") ? "is-active" : undefined} href="/flow">Flow</Link>
           <Link className={isActive("/docs/overview") ? "is-active" : undefined} href="/docs/overview">Docs</Link>
           <Link className={isActive("/catalog") ? "is-active" : undefined} href="/catalog">Catalogue</Link>
-          <Link className={isActive("/docs/first-product") ? "is-active" : undefined} href="/docs/first-product">Start</Link>
         </div>
       </div>
     </header>

@@ -1,18 +1,41 @@
 ---
 title: Context Lifecycle
-summary: Keep shared context aligned with deployed reality.
+summary: Align context with deployed reality before closure.
 stage: Context Lifecycle
 sourceRefs:
   - context/07_context_lifecycle/
   - context/logs/context/
+  - framework/agents/context-lifecycle-agent.md
+  - framework/prompts/14-context-lifecycle-agent.md
 ---
+
+## Purpose
+
+Ensure repository context stays aligned to deployed reality. A feature is complete only when code **and** context are both complete. Performs explicit diff and consistency checks before closure.
+
+[Explore this stage in the SDLC Flow](/flow#context-lifecycle)
 
 ## Inputs
 
-All stage outputs and deployed implementation evidence.
+Merged and deployed feature artefacts, current architecture/contracts, and feedback synthesis.
 
 ## Outputs
 
-Context diff, consistency checks, and closure verification.
+Context diff, consistency check, and closure log entry.
+
+## Prompt to run
+
+`framework/prompts/14-context-lifecycle-agent.md`
+
+## Human gate
+
+**Owner:** Engineering + Product  
+**Decision:** Verify context complete and close the feature loop.
+
+## Key context artefacts
+
+- Writes: `context/07_context_lifecycle/diffs/*`, `context/07_context_lifecycle/checks/*`
+- Closure: `context/logs/context/context-lifecycle-log.md`
+- Example: `context/examples/golden-path/logs/context/context-lifecycle-log.md`
 
 <ContextWorkflow />

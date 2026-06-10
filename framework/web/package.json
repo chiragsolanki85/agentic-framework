@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "node scripts/validate-source-refs.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

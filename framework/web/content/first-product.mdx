@@ -5,17 +5,25 @@ sourceRefs:
   - README.md (repo root)
   - framework/NEW_PROJECT_CHECKLIST.md
   - framework/NEW_FEATURE_CHECKLIST.md
+  - framework/core/starter/HAPPY_PATH_PROMPT_SEQUENCE.md
 ---
+
+## Before you start
+
+The repository uses a two-folder model: `framework/` (reusable operating system) and `context/` (your project artefacts). On a fresh clone, `context/00_foundations/` is an empty scaffold.
 
 ## Project kickoff
 
-- Complete all `context/00_foundations/**/*.md` files.
-- Confirm the checklist in `context/00_foundations/cross-cutting/foundations-checklist.md`.
-- Record approval in `context/logs/handoffs/30_handoffs.md`.
+1. **Optional reset:** run `./framework/scripts/init-context.sh` to ensure a clean context scaffold (preserves `context/examples/`)
+2. **Bootstrap foundations:** run `framework/prompts/01-foundations-facilitator.md` — this creates all foundation files including `context/00_foundations/cross-cutting/foundations-checklist.md`
+3. **Verify readiness:** complete the foundations checklist (produced during step 2, not pre-seeded)
+4. **Log approval:** record foundation gate in `context/logs/handoffs/30_handoffs.md`
+
+See also: [framework/NEW_PROJECT_CHECKLIST.md](https://github.com/chiragsolanki85/agentic-framework/blob/main/framework/NEW_PROJECT_CHECKLIST.md) in the repository.
 
 ## First feature sequence
 
-Use prompts in order:
+Follow the [happy-path prompt sequence](https://github.com/chiragsolanki85/agentic-framework/blob/main/framework/core/starter/HAPPY_PATH_PROMPT_SEQUENCE.md) or use the [interactive SDLC Flow](/flow):
 
 1. `framework/prompts/00-session-bootstrap.md`
 2. `framework/prompts/02-requirements-agent.md`
@@ -29,12 +37,20 @@ Use prompts in order:
 10. `framework/prompts/13-feedback-agent.md`
 11. `framework/prompts/14-context-lifecycle-agent.md`
 
+After each human gate: `framework/prompts/09-handoff-log-entry.md`  
+When stuck: `framework/prompts/10-orchestrator-whats-next.md`
+
+## Worked example
+
+Study `context/examples/golden-path/` in the repository for a complete `FEAT-ONBOARDING-001` walkthrough.
+
 ## Required gates
 
+- Foundation approval
 - Refined-ready
 - Spec approval
-- PR approval
-- Validation approval
-- Deploy go/no-go
+- PR/merge approval (via Review Agent)
+- Validation suite approval
+- Deploy go/no-go and verification
 - Outcome triage
 - Context complete verification

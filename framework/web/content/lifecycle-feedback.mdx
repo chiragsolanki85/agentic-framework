@@ -1,17 +1,39 @@
 ---
 title: Feedback
-summary: Compare production behaviour to original outcomes and decide next moves.
+summary: Production outcomes vs intent; close, reopen, or follow-on.
 stage: Feedback
 sourceRefs:
   - context/06_feedback/
+  - framework/agents/feedback-agent.md
+  - framework/prompts/13-feedback-agent.md
 ---
+
+## Purpose
+
+Synthesize production feedback and compare actual outcomes against original intent. Determines whether the feature achieves its target outcomes or needs follow-on work.
+
+[Explore this stage in the SDLC Flow](/flow#feedback)
 
 ## Inputs
 
-Telemetry, support/customer feedback, target outcomes.
+Target outcomes, production analytics, support feedback, and deployment reports.
 
 ## Outputs
 
-Feedback synthesis and outcome review decision.
+Feedback synthesis and `OUTCOME-REVIEW-<FEATURE-ID>.md`.
+
+## Prompt to run
+
+`framework/prompts/13-feedback-agent.md`
+
+## Human gate
+
+**Owner:** Product Lead  
+**Decision:** Triage close, reopen, or new-initiative.
+
+## Key context artefacts
+
+- Reads: `context/00_foundations/product/target-outcomes.md`, `context/05_deployment/reports/*`
+- Writes: `context/06_feedback/synthesis/*`, `context/06_feedback/outcome-reviews/*`
 
 <FeedbackWorkflow />

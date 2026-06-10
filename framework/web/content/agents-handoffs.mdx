@@ -10,29 +10,39 @@ sourceRefs:
 
 ## Handoff flow
 
-1. Requirements Agent -> Refined-ready gate
-2. Spec Agent -> Spec approval gate
-3. Implementation Agent -> PR approval gate
-4. Validation Agent -> Suite approval gate
-5. Deployment Agent -> Go/no-go and verification gate
-6. Feedback Agent -> Outcome triage gate
-7. Context Lifecycle Agent -> Context-complete closure gate
+1. Foundations Facilitator → Foundation approval gate
+2. Requirements Agent → Refined-ready gate
+3. Spec Agent → Spec approval gate
+4. Implementation Agent → (produces PR for review)
+5. Review Agent → PR/merge approval gate
+6. Validation Agent → Suite approval gate
+7. Deployment Agent → Go/no-go and verification gate
+8. Feedback Agent → Outcome triage gate
+9. Context Lifecycle Agent → Context-complete closure gate
+
+Explore each transition interactively on the [SDLC Flow](/flow) page.
+
+## On-demand agents
+
+**Context Manager Agent** (`framework/prompts/08-context-manager-agent.md`) — use mid-flight when shared context needs updating outside the happy-path gate sequence. Not a mandatory stage transition.
 
 ## Handoff rules
 
 - Every transition must be recorded in `context/logs/handoffs/30_handoffs.md`.
 - Every gate must name a human decision owner.
-- No stage can proceed without evidence from prior gate.
+- No stage can proceed without evidence from the prior gate.
+- Run `framework/prompts/09-handoff-log-entry.md` only after a human gate decision — not after every draft edit.
 
 ## Required evidence per transition
 
 | Transition | Required evidence |
 |---|---|
-| Requirements -> Spec | Refined-ready checklist and approved requirement |
-| Spec -> Implementation | Approved `SPEC-FEAT-*` with task plan |
-| Implementation -> Validation | Implementation log plus PR review outcomes |
-| Validation -> Deployment | Validation report with pass recommendation |
-| Deployment -> Feedback | Deployment report and verification |
-| Feedback -> Context | Outcome review decision |
-| Context -> Done | Context diff + consistency check + final approval |
-
+| Foundations → Requirements | Completed foundations checklist and approved handoff |
+| Requirements → Spec | Refined-ready checklist and approved requirement |
+| Spec → Implementation | Approved `SPEC-FEAT-*` with task plan |
+| Implementation → Review | Implementation log and PR ready for review |
+| Review → Validation | PR review outcomes and merge approval |
+| Validation → Deployment | Validation report with pass recommendation |
+| Deployment → Feedback | Deployment report and verification |
+| Feedback → Context | Outcome review decision |
+| Context → Done | Context diff + consistency check + final approval |

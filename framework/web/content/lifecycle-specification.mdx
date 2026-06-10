@@ -1,17 +1,41 @@
 ---
 title: Technical Specification
-summary: Build an implementation-safe contract before coding.
+summary: Implementation-safe contract before coding.
 stage: Specification
 sourceRefs:
   - context/02_specs/
+  - framework/agents/spec-agent.md
+  - framework/prompts/04-spec-agent.md
 ---
+
+## Purpose
+
+Translate approved requirements into an implementation-safe technical specification with concrete file paths, alternatives documented, and acceptance tests drafted. Prevents build-without-contract risk.
+
+[Explore this stage in the SDLC Flow](/flow#specification)
 
 ## Inputs
 
-Approved requirement and foundation constraints.
+Approved requirement, foundation constraints, architecture baseline, and existing contracts.
 
 ## Outputs
 
-Spec with path plan, contracts, risks, and acceptance tests.
+`SPEC-FEAT-<EPIC>-<NNN>.md` with task plan and acceptance test draft.
+
+## Prompt to run
+
+- `framework/prompts/04-spec-agent.md`
+- Gate: `framework/prompts/05-spec-approval-gate.md`
+
+## Human gate
+
+**Owner:** Engineering Lead  
+**Decision:** Approve spec before implementation starts.
+
+## Key context artefacts
+
+- Reads: `context/01_requirements/features/*`
+- Writes: `context/02_specs/SPEC-FEAT-<EPIC>-<NNN>.md`
+- Example: `context/examples/golden-path/02_specs/SPEC-FEAT-ONBOARDING-001.md`
 
 <SpecificationWorkflow />

@@ -4,14 +4,38 @@ summary: Convert intent into refined BDD requirements.
 stage: Requirements
 sourceRefs:
   - context/01_requirements/
+  - framework/agents/requirements-agent.md
+  - framework/prompts/02-requirements-agent.md
 ---
+
+## Purpose
+
+Transform discovery context into refined, BDD-ready feature requirements with explicit Given/When/Then acceptance criteria. Requirements must be traceable to foundations and approved before specification begins.
+
+[Explore this stage in the SDLC Flow](/flow#requirements)
 
 ## Inputs
 
-Foundations, constraints, and initiative intent.
+Foundations, constraints, initiative intent, and discovery notes.
 
 ## Outputs
 
-Refined BDD requirement and ready gate evidence.
+`FEATURE-<EPIC>-<NNN>.md` with refined-ready checklist evidence.
+
+## Prompt to run
+
+- `framework/prompts/02-requirements-agent.md`
+- Gate: `framework/prompts/03-refined-ready-gate-review.md`
+
+## Human gate
+
+**Owner:** Product Lead  
+**Decision:** Approve refined-ready gate before specification.
+
+## Key context artefacts
+
+- Reads: `context/00_foundations/**/*.md`
+- Writes: `context/01_requirements/features/FEATURE-<EPIC>-<NNN>.md`
+- Example: `context/examples/golden-path/01_requirements/features/FEATURE-ONBOARDING-001.md`
 
 <RequirementsWorkflow />

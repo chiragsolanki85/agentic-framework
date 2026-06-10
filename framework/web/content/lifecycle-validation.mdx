@@ -1,17 +1,39 @@
 ---
 title: Validation and Testing
-summary: Confirm behaviour, contracts, regression safety, and quality gates.
+summary: Behaviour, contracts, regression, and release gates.
 stage: Validation
 sourceRefs:
   - context/04_validation/
+  - framework/agents/validation-agent.md
+  - framework/prompts/11-validation-agent.md
 ---
+
+## Purpose
+
+Validate implemented behaviour against requirements and spec with explicit pass/fail evidence. No deployment without an approved validation report.
+
+[Explore this stage in the SDLC Flow](/flow#validation)
 
 ## Inputs
 
-Requirements, spec, and implementation outputs.
+Requirement, spec, implementation log, and existing test suite.
 
 ## Outputs
 
-Validation plan/report and suite approval recommendation.
+Validation plan and `VALIDATION-REPORT-<FEATURE-ID>.md`.
+
+## Prompt to run
+
+`framework/prompts/11-validation-agent.md`
+
+## Human gate
+
+**Owner:** Engineering Lead  
+**Decision:** Approve suite readiness before deployment.
+
+## Key context artefacts
+
+- Reads: `context/01_requirements/features/*`, `context/02_specs/*`, `context/03_implementation/*`
+- Writes: `context/04_validation/plans/*`, `context/04_validation/reports/*`
 
 <ValidationWorkflow />

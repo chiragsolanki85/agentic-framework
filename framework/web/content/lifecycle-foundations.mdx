@@ -1,22 +1,42 @@
 ---
 title: Foundations
-summary: Multi-domain foundation readiness before delivery starts.
+summary: Multi-domain foundation readiness before feature delivery.
 stage: Foundations
 sourceRefs:
   - context/00_foundations/
+  - framework/prompts/01-foundations-facilitator.md
 ---
 
-## Domains
+## Purpose
 
-- Product
-- Architecture
-- Engineering
-- Data
-- Ways of Working
-- Cross-cutting controls
+Foundations establish immutable project context across product, architecture, engineering, data, and ways-of-working. No feature delivery should begin until foundations are complete and approved. Weak foundations increase rework and risk downstream.
+
+[Explore this stage in the SDLC Flow](/flow#foundations)
+
+## Inputs
+
+Strategic intent, business constraints, team structure, and existing technical landscape.
+
+## Outputs
+
+Complete foundation package across five domains plus cross-cutting controls and architect handoff.
+
+## Prompt to run
+
+`framework/prompts/01-foundations-facilitator.md` — creates all foundation files including the readiness checklist.
+
+## Human gate
+
+**Owner:** Product + Engineering + Delivery  
+**Decision:** Approve foundation readiness before requirements work begins.
+
+## Key context artefacts
+
+- `context/00_foundations/product/*`
+- `context/00_foundations/architecture/*`
+- `context/00_foundations/engineering/*`
+- `context/00_foundations/data/*`
+- `context/00_foundations/ways-of-working/*`
+- `context/00_foundations/cross-cutting/foundations-checklist.md`
 
 <FoundationsWorkflow />
-
-## Exit criteria
-
-All domain artefacts are complete and approved.

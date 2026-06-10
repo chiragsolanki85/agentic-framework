@@ -8,17 +8,44 @@ sourceRefs:
 
 ## Purpose
 
-This portal presents the Crosstide Agentic SDLC blueprint as an enterprise-ready operating guide.
+This portal presents the Crosstide Agentic SDLC blueprint as an enterprise-ready operating guide. It complements the repository — the repo remains the canonical source of truth for prompts, standards, and artefacts.
+
+## Two-folder model
+
+| Folder | Role |
+|--------|------|
+| `framework/` | Reusable agents, prompts, standards, templates, and tooling |
+| `context/` | Your product foundations, lifecycle artefacts, logs, and governance records |
+
+**Framework = how to work. Context = what you're building.**
+
+Clone the repository once. Reset `context/` per initiative with `./framework/scripts/init-context.sh`. The framework stays unchanged.
 
 ## Intended audience
 
-- Product Managers defining outcomes and constraints
-- Engineers and Architects executing technical delivery
-- Delivery and Governance Leads approving risk, controls, and release readiness
+- **Executives and CTOs** — start with the [Executive Implementation Guide](/docs/executive-implementation-guide) and [SDLC Flow](/flow)
+- **Product Managers** — define outcomes and constraints via [role guide](/docs/role-product-managers)
+- **Engineers and Architects** — execute delivery via [role guide](/docs/role-engineering)
+- **Delivery and Governance** — run approvals and evidence controls via [role guide](/docs/role-governance)
+
+## Operating principles
+
+1. **Human gates at every critical transition** — agents propose; humans approve
+2. **End-to-end traceability** — every artefact links via Feature ID `FEAT-<EPIC>-<NNN>`
+3. **Context completeness** — a feature is done only when code and context are both complete
+
+## Portal map
+
+| Section | Purpose |
+|---------|---------|
+| [SDLC Flow](/flow) | Interactive diagram — human, agent, and context handoffs per stage |
+| [Docs](/docs/overview) | Wiki guides for roles, lifecycle, standards, and agents |
+| [Artefact Catalogue](/catalog) | Filterable list of deliverables by tier, stage, and role |
+| [Golden-path example](https://github.com/chiragsolanki85/agentic-framework/tree/main/context/examples/golden-path) | Worked sample feature in the repository |
 
 ## How to use this portal
 
-1. Complete foundations across all domains.
-2. Run features through the full lifecycle.
-3. Enforce mandatory human gates.
-4. Use Core first, then adopt Extended controls as needed.
+1. Complete foundations across all domains (or explore the [SDLC Flow](/flow) first)
+2. Run features through the full lifecycle with prompts from `framework/prompts/`
+3. Enforce mandatory human gates and log handoffs
+4. Use Core tier first, then adopt Extended controls as needed

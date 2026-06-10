@@ -1,17 +1,40 @@
 ---
 title: Implementation
-summary: Execute approved spec in atomic and verifiable steps.
+summary: Atomic, verifiable execution aligned to approved spec.
 stage: Implementation
 sourceRefs:
   - context/03_implementation/
+  - framework/agents/implementation-agent.md
+  - framework/prompts/06-implementation-agent.md
 ---
+
+## Purpose
+
+Execute the approved specification in atomic, verifiable code changes with traceable commits and implementation evidence. Implementation follows the spec — deviations require spec revision and re-approval.
+
+[Explore this stage in the SDLC Flow](/flow#implementation)
 
 ## Inputs
 
-Approved specification and standards.
+Approved `SPEC-FEAT-<FEATURE-ID>.md`, codebase, and coding standards.
 
 ## Outputs
 
-Code changes, validation evidence, and PR readiness.
+Code changes, tests, and `IMPLEMENTATION-FEAT-<FEATURE-ID>.md`.
+
+## Prompt to run
+
+`framework/prompts/06-implementation-agent.md`
+
+## Human gate
+
+**Owner:** Engineering Lead (via Review Agent)  
+**Decision:** PR review and merge approval before validation.
+
+## Key context artefacts
+
+- Reads: `context/02_specs/SPEC-FEAT-<EPIC>-<NNN>.md`
+- Writes: `context/03_implementation/IMPLEMENTATION-FEAT-<EPIC>-<NNN>.md`
+- Example: `context/examples/golden-path/03_implementation/IMPLEMENTATION-FEAT-ONBOARDING-001.md`
 
 <ImplementationWorkflow />

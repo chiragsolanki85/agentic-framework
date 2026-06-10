@@ -1,17 +1,39 @@
 ---
 title: Deployment
-summary: Release with readiness checks, telemetry guardrails, and rollback safety.
+summary: Readiness, telemetry, and rollback governance.
 stage: Deployment
 sourceRefs:
   - context/05_deployment/
+  - framework/agents/deployment-agent.md
+  - framework/prompts/12-deployment-agent.md
 ---
+
+## Purpose
+
+Perform governed, observable deployment with rollback safety and post-deploy verification. Deployment follows approved validation evidence.
+
+[Explore this stage in the SDLC Flow](/flow#deployment)
 
 ## Inputs
 
-Approved validation evidence and readiness checklist.
+Approved validation report, deployment rules, and environment constraints.
 
 ## Outputs
 
-Deployment report, smoke verification, and release status.
+Deploy readiness checklist and `DEPLOY-REPORT-<FEATURE-ID>.md`.
+
+## Prompt to run
+
+`framework/prompts/12-deployment-agent.md`
+
+## Human gate
+
+**Owner:** Release owner  
+**Decision:** Go/no-go and post-deploy verification.
+
+## Key context artefacts
+
+- Reads: `context/04_validation/reports/*`
+- Writes: `context/05_deployment/readiness/*`, `context/05_deployment/reports/*`
 
 <DeploymentWorkflow />

@@ -10,11 +10,12 @@ sourceRefs:
   - framework/agents/deployment-agent.md
   - framework/agents/feedback-agent.md
   - framework/agents/context-lifecycle-agent.md
+  - framework/agents/context-manager-agent.md
 ---
 
-## Agent roster
+## Happy-path agents
 
-The framework uses specialized agents with bounded responsibilities:
+Specialized agents with bounded responsibilities — see the [SDLC Flow](/flow) for the interactive handoff diagram.
 
 - Requirements Agent
 - Spec Agent
@@ -25,6 +26,10 @@ The framework uses specialized agents with bounded responsibilities:
 - Feedback Agent
 - Context Lifecycle Agent
 
+## Supplementary agents
+
+- **Context Manager Agent** — on-demand context alignment during delivery (prompt 08). Use when shared docs need updating mid-flight; not part of the standard gate sequence.
+
 ## Why specialized agents
 
 - Prevents role drift and uncontrolled autonomy
@@ -33,14 +38,14 @@ The framework uses specialized agents with bounded responsibilities:
 
 ## Agent responsibilities (at a glance)
 
-| Agent | Primary input | Primary output | Human gate |
-|---|---|---|---|
-| Requirements | Foundations and constraints | Feature BDD requirement | Refined-ready approval |
-| Spec | Approved requirement | Technical spec | Spec approval |
-| Implementation | Approved spec | Code and implementation log | PR/merge approval |
-| Review | Requirement/spec/implementation | Risk and quality findings | Engineering approval decision |
-| Validation | Requirement/spec/implementation | Validation report | Suite approval |
-| Deployment | Validation and readiness | Deployment report | Go/no-go + verification |
-| Feedback | Telemetry and outcomes | Outcome review | Product triage decision |
-| Context Lifecycle | All stage outputs | Diff/consistency closure evidence | Context complete verification |
-
+| Agent | Primary input | Primary output | Human gate | Path |
+|---|---|---|---|---|
+| Requirements | Foundations and constraints | Feature BDD requirement | Refined-ready approval | Happy-path |
+| Spec | Approved requirement | Technical spec | Spec approval | Happy-path |
+| Implementation | Approved spec | Code and implementation log | PR/merge approval | Happy-path |
+| Review | Requirement/spec/implementation | Risk and quality findings | Engineering approval decision | Happy-path |
+| Validation | Requirement/spec/implementation | Validation report | Suite approval | Happy-path |
+| Deployment | Validation and readiness | Deployment report | Go/no-go + verification | Happy-path |
+| Feedback | Telemetry and outcomes | Outcome review | Product triage decision | Happy-path |
+| Context Lifecycle | All stage outputs | Diff/consistency closure evidence | Context complete verification | Happy-path |
+| Context Manager | Merged PR and changed code | Updated shared context docs | Context completeness check | On-demand |
