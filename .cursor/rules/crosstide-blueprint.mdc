@@ -1,0 +1,36 @@
+---
+description: Crosstide Agentic Blueprint — framework/context operating model
+alwaysApply: true
+---
+
+# Crosstide Agentic Blueprint
+
+This repository uses a two-folder model:
+
+- **`framework/`** — reusable agents, prompts, standards, templates, and tooling. Do not write project artefacts here during feature delivery.
+- **`context/`** — project-specific foundations, lifecycle artefacts, logs, and governance records.
+
+## Session bootstrap
+
+Before lifecycle work, load:
+
+- `context/00_foundations/**/*.md`
+- `framework/standards/*.md`
+
+Full bootstrap text: `framework/prompts/00-session-bootstrap.md`
+
+## Operating rules
+
+- Use Feature ID format: `FEAT-<EPIC>-<NNN>`
+- Never skip human approval gates
+- Write outputs only to `context/` (requirements, specs, implementation evidence, validation, deployment, feedback, context lifecycle, logs)
+- Read role contracts from `framework/agents/` when running stage prompts from `framework/prompts/`
+- When unsure of next step, use `framework/prompts/10-orchestrator-whats-next.md`
+- After each human gate decision, log via `framework/prompts/09-handoff-log-entry.md`
+
+## References
+
+- Quick start: `README.md`
+- Framework index: `framework/README.md`
+- Context guide: `context/README.md`
+- Worked example: `context/examples/golden-path/`

@@ -1,6 +1,17 @@
 # Crosstide Agentic Blueprint
 
-Enterprise-ready, tool-agnostic blueprint for running product delivery through a full Agentic SDLC lifecycle:
+Enterprise-ready, tool-agnostic blueprint for running product delivery through a full Agentic SDLC lifecycle.
+
+## Two-folder model
+
+| Folder | Role |
+|--------|------|
+| [`framework/`](framework/) | Reusable agents, prompts, standards, templates, and tooling |
+| [`context/`](context/) | Project foundations, lifecycle artefacts, logs, and governance records |
+
+**Framework = how to work. Context = what you're building.**
+
+## Lifecycle stages
 
 1. Foundations
 2. Requirements Definition
@@ -11,99 +22,41 @@ Enterprise-ready, tool-agnostic blueprint for running product delivery through a
 7. Customer Feedback
 8. Context Lifecycle
 
-## Adoption model: Core / Extended / Optional
+## Quick start
 
-To avoid overwhelming teams, this repository now uses tiered adoption:
+1. **Clone** this repository for a new product
+2. **Reset context** (optional on fresh clone): `./framework/scripts/init-context.sh`
+3. **Complete foundations**: run [`framework/prompts/01-foundations-facilitator.md`](framework/prompts/01-foundations-facilitator.md)
+4. **Bootstrap each session**: run [`framework/prompts/00-session-bootstrap.md`](framework/prompts/00-session-bootstrap.md)
+5. **Deliver features**: follow [`framework/core/starter/HAPPY_PATH_PROMPT_SEQUENCE.md`](framework/core/starter/HAPPY_PATH_PROMPT_SEQUENCE.md)
+6. **Log gate decisions**: run [`framework/prompts/09-handoff-log-entry.md`](framework/prompts/09-handoff-log-entry.md) after each human gate
 
-- `core/` -> required baseline for production delivery
-- `extended/` -> recommended controls for stronger governance/audit
-- `optional/` -> context-specific assets (hidden unless needed)
+When stuck, run [`framework/prompts/10-orchestrator-whats-next.md`](framework/prompts/10-orchestrator-whats-next.md).
 
-See `ARTEFACT_TIER_MATRIX.md` for full classification.
+## Cursor / IDE
 
-## First product starter guide
+- `.cursor/rules/crosstide-blueprint.mdc` loads automatically in Cursor
+- `@framework/prompts/` and `@context/00_foundations/` for file references
+- See [`framework/README.md`](framework/README.md) for full IDE setup
 
-### Step 1: initialize the project context
+## Adoption tiers
 
-1. Duplicate this repository for a new product.
-2. Complete all `00_foundations/**/*.md`.
-3. Confirm readiness using `00_foundations/cross-cutting/foundations-checklist.md`.
-4. Log foundation approval in `logs/handoffs/30_handoffs.md`.
+- `framework/core/` — required baseline
+- `framework/extended/` + `context/extended/` — governance controls and project records
+- `framework/optional/` + `context/optional/` — context-specific extras
 
-### Step 2: run your first feature end-to-end
+See [`framework/ARTEFACT_TIER_MATRIX.md`](framework/ARTEFACT_TIER_MATRIX.md).
 
-For `FEAT-<EPIC>-<NNN>`, run prompts in this order:
+## Worked example
 
-1. `prompts/00-session-bootstrap.md`
-2. `prompts/02-requirements-agent.md`
-3. `prompts/03-refined-ready-gate-review.md`
-4. `prompts/04-spec-agent.md`
-5. `prompts/05-spec-approval-gate.md`
-6. `prompts/06-implementation-agent.md`
-7. `prompts/07-review-agent.md`
-8. `prompts/11-validation-agent.md`
-9. `prompts/12-deployment-agent.md`
-10. `prompts/13-feedback-agent.md`
-11. `prompts/14-context-lifecycle-agent.md`
-12. `prompts/09-handoff-log-entry.md` after each gate
-13. `prompts/10-orchestrator-whats-next.md` when unsure
-
-#### When to run `prompts/09-handoff-log-entry.md` (handoff log)
-
-Nothing writes to `logs/handoffs/30_handoffs.md` automatically. Use **prompt 09** when a **human gate outcome** is decided and you are **moving the feature (or initiative) across a stage boundary** — not after every exploratory edit or draft prompt.
-
-**Do not** run prompt 09 between prompt 02 and 03 just to “checkpoint” drafting. Run prompt 02 until the requirement is ready, run prompt 03 for the refined-ready decision, then run **prompt 09** once that decision is recorded (approve or changes required with clear next step).
-
-**Typical points to run prompt 09** (after the human decision is explicit):
-
-- After refined feature ready (following prompt 03) — before starting prompt 04
-- After spec approval (following prompt 05) — before starting prompt 06
-- After merge / PR outcome (following prompt 07) — before validation or further work as agreed
-- After validation suite approval, deploy verification, outcome triage, and context-complete closure when those gates complete
-
-**Prompt 10** reads repo state (including handoffs) to suggest the next valid move; it does not replace logging. Use prompt 09 to keep the handoff log the audit trail.
-
-### Step 3: apply enterprise gates
-
-Minimum required approvals:
-
-- Refined feature ready
-- Spec approval
-- PR/merge approval
-- Validation suite approval
-- Deploy go/no-go and deploy verification
-- Outcome triage (close/reopen/follow-on)
-- Context completeness verification
-
-## Repository map
-
-- `00_foundations/` -> five foundation domains + cross-cutting controls
-- `01_requirements/` -> BDD requirements and refinement gates
-- `02_specs/` -> technical specifications
-- `03_implementation/` -> implementation evidence and PR readiness
-- `04_validation/` -> validation plans and reports
-- `05_deployment/` -> readiness and deployment reports
-- `06_feedback/` -> feedback synthesis and outcome reviews
-- `07_context_lifecycle/` -> context diff and consistency checks
-- `standards/` -> baseline governance and guardrails
-- `prompts/` -> lifecycle and governance prompt library
-- `templates/` -> artefact templates
-- `logs/` -> handoffs, decisions, and context closure evidence
-- `core/`, `extended/`, `optional/` -> tiered adoption packs
-
-## What each tier contains
-
-- `core/`: essential starter flow and production-safe minimum
-- `extended/`: ADRs, risk/exception registers, controls, release runbooks, traceability matrix, post-release reviews
-- `optional/`: experiments, advanced dashboards, portfolio/data extras
+End-to-end sample feature: [`context/examples/golden-path/`](context/examples/golden-path/)
 
 ## Naming conventions
 
 - Feature ID: `FEAT-<EPIC>-<NNN>` (example: `FEAT-AUTH-001`)
 - Requirement file: `FEATURE-<EPIC>-<NNN>.md`
 - Spec file: `SPEC-<FEATURE-ID>.md`
-- ADR file: `ADR-<NNN>-<slug>.md`
-- Handoff ID: `HO-<YYYYMMDD>-<NN>`
+- Handoff ID: `HO-<YYYYMMDD>-<NNN>`
 
 ## Mandatory principles
 
