@@ -1,3 +1,12 @@
+---
+feature_id: FEAT-<EPIC>-<NNN>
+epic: <EPIC>
+author: ""
+status: Draft
+stage: 02_specs
+gate_decision: PENDING
+---
+
 # SPEC-<FEATURE-ID>
 
 ## Metadata

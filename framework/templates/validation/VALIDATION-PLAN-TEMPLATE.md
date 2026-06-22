@@ -1,3 +1,11 @@
+---
+feature_id: FEAT-<EPIC>-<NNN>
+epic: <EPIC>
+status: Draft
+stage: 04_validation
+gate_decision: PENDING
+---
+
 # VALIDATION-PLAN-<FEATURE-ID>
 
 ## Scope and references

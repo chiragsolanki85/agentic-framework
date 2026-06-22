@@ -33,11 +33,25 @@ Enterprise-ready, tool-agnostic blueprint for running product delivery through a
 
 When stuck, run [`framework/prompts/10-orchestrator-whats-next.md`](framework/prompts/10-orchestrator-whats-next.md).
 
-## Cursor / IDE
+## Tool integrations (all optional)
 
-- `.cursor/rules/crosstide-blueprint.mdc` loads automatically in Cursor
-- `@framework/prompts/` and `@context/00_foundations/` for file references
-- See [`framework/README.md`](framework/README.md) for full IDE setup
+The framework is plain markdown and works without any specific tool. The integrations below improve the experience but are not prerequisites.
+
+### Cursor
+- `.cursor/rules/crosstide-blueprint.mdc` loads automatically
+- Use `@framework/prompts/` and `@context/00_foundations/` for file references
+
+### Claude Code
+- `CLAUDE.md` loads automatically at session start
+- Slash commands in `.claude/commands/` map every stage prompt to a `/command`
+- Run `/bootstrap` to start a session, `/whats-next` if unsure of current stage
+
+### Obsidian
+- Open `context/` as an Obsidian vault
+- `context/HOME.md` provides a Dataview dashboard of backlog status and pending gates
+- Artefact frontmatter (`feature_id`, `stage`, `status`, `gate_decision`) enables filtering and querying across the vault
+- Install the [Dataview plugin](https://github.com/blacksmithgu/obsidian-dataview) to activate the dashboard queries
+- `.obsidian/` shared config is committed; per-user workspace state is gitignored
 
 ## Adoption tiers
 

@@ -8,3 +8,9 @@
 *.log
 coverage/
 *.tsbuildinfo
+
+# Obsidian — user-specific state (do not commit)
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+**/.obsidian/cache
+**/.obsidian/plugins/

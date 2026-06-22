@@ -1,3 +1,12 @@
+---
+feature_id: FEAT-<EPIC>-<NNN>
+epic: <EPIC>
+owner: ""
+status: Draft
+stage: 01_requirements
+gate_decision: PENDING
+---
+
 # FEATURE-<EPIC>-<NNN>
 
 ## Metadata

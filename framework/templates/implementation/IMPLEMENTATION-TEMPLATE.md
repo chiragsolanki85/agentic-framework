@@ -1,3 +1,12 @@
+---
+feature_id: FEAT-<EPIC>-<NNN>
+epic: <EPIC>
+branch: ""
+status: InProgress
+stage: 03_implementation
+gate_decision: PENDING
+---
+
 # IMPLEMENTATION-<FEATURE-ID>
 
 ## Execution context
